@@ -1,0 +1,138 @@
+.cart-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, black, #355c63);
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #FFD700;
+}
+
+.cart-box {
+  max-width: 1000px;
+  margin: 0 auto;
+  /* Removed box background and padding */
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.cart-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #FFD700;
+}
+
+.cart-empty {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #d4af37;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  border-radius: 0.75rem;
+  box-shadow: 0 5px 12px rgba(255, 215, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.cart-item:hover {
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+}
+
+.cart-image {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  border: 2px solid #355c63;
+  background-color: #222;
+}
+
+.cart-details {
+  flex: 1;
+}
+
+.cart-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #FFD700;
+}
+
+.cart-price {
+  color: #d4af37;
+  margin-top: 0.25rem;
+}
+
+.cart-remove-button {
+  background-color: #355c63;
+  color: #FFD700;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cart-remove-button:hover {
+  background-color: #2b4a4f;
+  transform: scale(1.05);
+}
+
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid #444;
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cart-total {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #FFD700;
+}
+
+.cart-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cart-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cart-continue {
+  background-color: #355c63;
+  color: #FFD700;
+}
+
+.cart-continue:hover {
+  background-color: #2b4a4f;
+  transform: scale(1.05);
+}
+
+.cart-checkout {
+  background-color: #FFD700;
+  color: black;
+}
+
+.cart-checkout:hover {
+  background-color: #e6c200;
+  transform: scale(1.05);
+}

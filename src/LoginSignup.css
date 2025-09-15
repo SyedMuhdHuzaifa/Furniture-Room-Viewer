@@ -1,0 +1,48 @@
+.auth-container {
+  background: linear-gradient(to bottom right, #000000, #355c63);
+  color: gold;
+  padding: 2rem;
+  max-width: 400px;
+  margin: 4rem auto;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #111;
+  color: white;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #355c63;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background: gold;
+  color: black;
+}
+
+.auth-toggle {
+  text-align: center;
+  margin-top: 1rem;
+  cursor: pointer;
+  color: #ccc;
+}

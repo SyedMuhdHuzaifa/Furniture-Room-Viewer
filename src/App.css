@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap');
+
+/* Main App Container */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  background: linear-gradient(to bottom right, #000000, #355c63);
+}
+
+/* Header */
+.App-header {
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: white;
+  animation: fadeSlideIn 3s ease-out both;
+}
+
+.App-header h1 {
+  font-size: 2.8rem;
+  margin: 0.5rem 0;
+  font-weight: 700;
+  color: gold;
+}
+
+.App-header p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #c0c0c0;
+  margin-top: 0.5rem;
+}
+
+/* Logo Animation */
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+  margin-bottom: 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Main Logo Image */
+.logo-image {
+  width: 800px;
+  height: auto;
+  margin-top: 1rem;
+  animation: scaleIn 7s ease-out forwards;
+  opacity: 0;
+}
+
+/* Upload & Slider Container */
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background-color: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 600px;
+}
+
+/* File Input */
+input[type="file"] {
+  border: 2px dashed #355c63;
+  padding: 1rem;
+  background: #222;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input[type="file"]:hover {
+  background: #333;
+}
+
+/* Range Slider */
+input[type="range"] {
+  appearance: none;
+  height: 6px;
+  background: #555;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #355c63;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+/* Canvas */
+.canvas-container {
+  width: 100%;
+  height: 70vh;
+  background-color: #1e1e1e;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+/* Links */
+.App-link {
+  color: #40e0d0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.App-link:hover {
+  text-decoration: underline;
+}
+
+/* Floating Cart Button */
+.view-cart-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #355c63;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.view-cart-button:hover {
+  background-color: #2b4a4f;
+  transform: scale(1.05);
+}
+
+/* Fixed Top-Left Logo */
+.logo-top-left {
+  position: fixed;
+  top: 10px;
+  left: 20px;
+  width: 120px;
+  height: auto;
+  z-index: 1000;
+  animation: scaleIn 1.5s ease-out forwards;
+}
+
+/* --- Welcome Screen (Letter Animation) --- */
+.welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #000000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  animation: welcomeExit 10s ease-in-out forwards;
+  animation-delay: 7s;
+  overflow: hidden;
+  text-align: center;
+}
+
+.welcome-text {
+  font-size: 7rem;
+  font-family: 'Playfair Display', serif;
+  color: #FFD700;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 1;
+  animation: hideText 1s ease forwards;
+  animation-delay: 4s;
+}
+
+.welcome-text span {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeLetter 0.5s ease-out forwards;
+}
+
+/* Image fade in after text fade out */
+.welcome-image {
+  width: 1200px;
+  height: auto;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  transform: scale(0.9);
+  margin-top: 1rem;
+}
+
+.welcome-image.animate-in {
+  animation: fadeImageIn 2s ease-out forwards;
+}
+
+.welcome-text.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+
+/* --- Animations --- */
+@keyframes fadeLetter {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hideText {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeImageIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes welcomeExit {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleBounce {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,29 @@
+input[type="range"] {
+  appearance: none;              /* ✅ Standard */
+  -webkit-appearance: none;      /* ✅ Vendor prefix for Chrome/Safari */
+  height: 6px;
+  border-radius: 5px;
+  background: #d1d5db;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #3b82f6;
+  border-radius: 50%;
+  border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #3b82f6;
+  border-radius: 50%;
+  border: none;
+}
